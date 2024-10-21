@@ -25,4 +25,4 @@ Calculator 클래스 : 파싱, 검증, 합계 계산
 ### View
 ConsoleView 클래스 : 사용자에게 요청 및 결과를 출력하는 클래스
 ### Controller
-CalculatorControlelr 클래스 : 모델과 뷰를 연결
+CalculatorController 클래스 : 모델과 뷰를 연결
