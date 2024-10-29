@@ -1,7 +1,7 @@
 # java-calculator-precourse
 입력한 문자열에서 숫자를 추출하여 더하는 계산기 구현 내용을 리팩토링
 
-[기존 내용] (https://github.com/JinHyung-dev/java-calculator-7/blob/dev/README.md)
+[기존 내용](https://github.com/JinHyung-dev/java-calculator-7/blob/dev/README.md)
 
 ## 기존 설계
 ### Model
