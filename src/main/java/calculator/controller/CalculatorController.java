@@ -23,6 +23,9 @@ public class CalculatorController {
             view.printResult(result);
         } catch (IllegalArgumentException e) {
             view.printError(e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            System.out.println("프로그램을 종료합니다.");
         }
     }
 }
