@@ -5,6 +5,7 @@ import java.util.List;
 public class Validator {
 
     private static final String ALLOWED_CUSTOM_DELIMITERS = "!@#\\$%\\^&_+:;<>/|?";
+    private static final String ALLOWED_BASIC_DELIMITERS = ".,";
 
     public static void isValidInput(String input) throws IllegalArgumentException {
         if (isNullOrEmpty(input)) {
@@ -42,7 +43,7 @@ public class Validator {
     }
 
     static boolean isValidCharacter(String input) {
-        return input.matches("^[0-9]+$[" + ALLOWED_CUSTOM_DELIMITERS + "]?$");
+        return input.matches("^[0-9]+([" + ALLOWED_CUSTOM_DELIMITERS + ALLOWED_BASIC_DELIMITERS + "][0-9]+)*$");
     }
 
     static boolean isNullOrEmpty(String input) throws IllegalArgumentException {
