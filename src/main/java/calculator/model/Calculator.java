@@ -11,7 +11,7 @@ public class Calculator {
     public int sum(List<Integer> numbers) {
         int sum = 0;
         for (Integer number : numbers) {
-            sum += number; // 각 값을 합산
+            sum += number;
         }
         return sum;
     }
