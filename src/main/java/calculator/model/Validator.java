@@ -1,8 +1,10 @@
 package calculator.model;
 
+import java.util.List;
+
 public class Validator {
 
-    public static boolean isValidInput(String input) throws IllegalArgumentException {
+    public static void isValidInput(String input) throws IllegalArgumentException {
         if (!isNotNullOrEmpty(input)) {
             throw new IllegalArgumentException("내용을 입력해야합니다.");
         }
@@ -11,7 +13,15 @@ public class Validator {
             throw new IllegalArgumentException("가능한 글자만 입력해야 합니다.(입력가능한 특수문자 : !@#$%^&_+:;,<>./|?)");
         }
 
-        return true;
+    }
+
+    public static void isLargerThanZero(List<Integer> numbers) throws IllegalArgumentException {
+        for (Integer number : numbers) {
+            if (number < 0) {
+                throw new IllegalArgumentException("음수는 허용되지 않습니다: " + number);
+            }
+        }
+
     }
 
     static boolean isValidCharacter(String input) {
