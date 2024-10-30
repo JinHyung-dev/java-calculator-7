@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Validator {
 
+    private static final String ALLOWED_CUSTOM_DELIMITERS = "!@#\\$%\\^&_+:;<>/|?";
+
     public static void isValidInput(String input) throws IllegalArgumentException {
         if (isNullOrEmpty(input)) {
             throw new IllegalArgumentException("내용을 입력해야합니다.");
@@ -11,7 +13,7 @@ public class Validator {
 
         if (isCustomDelimiter(input)) {
             if (!isValidCustomDelimiter(input.substring(2, input.indexOf("\\n")))) {
-                throw new IllegalArgumentException("입력가능한 특수문자 : !@#$%^&_+:;,<>./|?");
+                throw new IllegalArgumentException("입력가능한 특수문자 : " + ALLOWED_CUSTOM_DELIMITERS);
             }
             input = input.substring(input.indexOf("\\n") + 2);
         }
@@ -23,7 +25,7 @@ public class Validator {
     }
 
     private static boolean isValidCustomDelimiter(String input) {
-        return input.matches("^[!@#$%^&_+:;<>/|?]?$");
+        return input.matches("^[" + ALLOWED_CUSTOM_DELIMITERS + "]?$");
     }
 
     private static boolean isCustomDelimiter(String input) {
@@ -40,7 +42,7 @@ public class Validator {
     }
 
     static boolean isValidCharacter(String input) {
-        return input.matches("^[0-9]+$[!@#$%^&_+:;,<>./|?]?$");
+        return input.matches("^[0-9]+$[" + ALLOWED_CUSTOM_DELIMITERS + "]?$");
     }
 
     static boolean isNullOrEmpty(String input) throws IllegalArgumentException {
