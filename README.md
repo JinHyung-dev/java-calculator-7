@@ -17,7 +17,7 @@
 ### Model
 * Calculator 클래스 : 합계 계산
 * Validator 클래스 : 입력값 검증
-* Parsing 클래스 : 입력값 파싱
+* Parser 클래스 : 입력값 파싱
 
 ### View
 * InputView 클래스 : 사용자에게 입력을 요청하고 처리하는 클래스
