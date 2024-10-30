@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Calculator {
     public int calc(List<Integer> numbers) throws IllegalArgumentException {
+        Validator.isLargerThanZero(numbers);
         return sum(numbers);
     }
 
