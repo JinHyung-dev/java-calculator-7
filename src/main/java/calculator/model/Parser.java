@@ -1,8 +1,12 @@
 package calculator.model;
 
-public class Parsing {
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
-    public static String[] parseNumbers(String input)
+public class Parser {
+
+    public static List<Integer> parseInput(String input)
             throws IllegalArgumentException {
         String delimiter = parseDelimiter(input);
         String target = input;
@@ -11,7 +15,15 @@ public class Parsing {
             target = replaceDelimiterMarker(input, delimiter);
         }
 
-        return target.split(delimiter);
+        List<String> parsedInput = Arrays.asList(target.split(delimiter));
+
+        return parseStringArr(parsedInput);
+    }
+
+    static List<Integer> parseStringArr(List<String> parsedInput) {
+        return parsedInput.stream()
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
     }
 
     static String parseCustomDelimiter(String input) {
